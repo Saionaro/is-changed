@@ -6,7 +6,7 @@ branding:
   color: blue
 inputs:
   path:
-    description: 'Entity path'
+    description: 'Entity path, could be a regexp'
     required: true
 outputs:
   changed:

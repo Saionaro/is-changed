@@ -9627,19 +9627,20 @@ __nccwpck_require__.r(__webpack_exports__);
 
 async function run() {
   try {
-    const token = _actions_core__WEBPACK_IMPORTED_MODULE_1___default().getInput('token');
+    const path = _actions_core__WEBPACK_IMPORTED_MODULE_1___default().getInput("path");
+    const token = _actions_core__WEBPACK_IMPORTED_MODULE_1___default().getInput("token");
     const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_0___default().getOctokit(token);
 
     const res = await octokit.rest.repos.compareCommitsWithBasehead({
       owner: (_actions_github__WEBPACK_IMPORTED_MODULE_0___default().context.repo.owner),
       repo: (_actions_github__WEBPACK_IMPORTED_MODULE_0___default().context.repo.repo),
-      basehead: "HEAD^...HEAD",
+      basehead: "HEAD~1...HEAD",
     });
 
+    const pathRegex = new RegExp(path);
     const changedFiles = res.data.files ?? [];
-    let isChanged = false;
-
-    // 
+    const isChanged = changedFiles
+      .some(changedPath=>pathRegex.test(changedPath));
 
     _actions_core__WEBPACK_IMPORTED_MODULE_1___default().setOutput("changed", isChanged);
   } catch (error) {

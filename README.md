@@ -44,4 +44,6 @@ jobs:
 
 ## Contributing
 
+Please, follow [Conventional Commits](https://www.conventionalcommits.org/) guidelines.
+
 Do not commit `dist` directory - it's been commited automatically during CI workflow.

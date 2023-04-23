@@ -1,0 +1,16 @@
+name: 'Is Changed'
+description: 'Did the entity changed in the commit?'
+author: 'Saionaro <shibakow@gmail.com>'
+branding:
+  icon: help-circle
+  color: blue
+inputs:
+  path:
+    description: 'Entity path'
+    required: true
+outputs:
+  changed:
+    description: 'Whether one of input entities changed or not'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

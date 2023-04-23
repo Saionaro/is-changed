@@ -1,0 +1,32 @@
+{
+  "name": "is-changed",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@semantic-release/git": "^10.0.1",
+    "@vercel/ncc": "^0.36.1",
+    "lefthook": "^1.3.10",
+    "semantic-release": "^21.0.1"
+  },
+  "scripts": {
+    "build": "ncc build src/index.js",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saionaro/is-changed.git"
+  },
+  "author": "Artem Shibakov <shibakow@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Saionaro/is-changed/issues"
+  },
+  "homepage": "https://github.com/Saionaro/is-changed#readme"
+}

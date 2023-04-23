@@ -8,6 +8,9 @@ inputs:
   glob:
     description: 'A glob template to be checked'
     required: true
+  token:
+    description: 'Github token to grant access to commits history'
+    required: true
 outputs:
   changed:
     description: 'Whether one of input entities changed or not'

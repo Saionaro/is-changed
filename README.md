@@ -32,6 +32,7 @@ jobs:
         uses: Saionaro/is-changed@v1.0.0
         with:
           glob: frontend
+          token: ${{ secrets.GITHUB_TOKEN }}
       # From now you know if the "frontend" directory changed in the commit
       # You can print it - "true" of "false"
       - name: Print version

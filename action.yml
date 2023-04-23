@@ -5,8 +5,8 @@ branding:
   icon: help-circle
   color: blue
 inputs:
-  path:
-    description: 'Entity path, could be a regexp'
+  glob:
+    description: 'A glob template to be checked'
     required: true
 outputs:
   changed:

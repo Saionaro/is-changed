@@ -8,7 +8,7 @@ Check if the entity has changed and use that knowledge to speed up your workflow
 
 ### Inputs
 
-- `path`: (required) the entity path to be checked. For example: "src", "package-lock.json", "frontend"
+- `glob`: (required) the entity path to be checked, a glob template. For example: "src", "package-lock.json", "frontend/**/*.js"
 
 ### Outputs
 
@@ -31,7 +31,7 @@ jobs:
       - id: ui_changed
         uses: Saionaro/is-changed@v1.0.0
         with:
-          path: frontend
+          glob: frontend
       # From now you know if the "frontend" directory changed in the commit
       # You can print it - "true" of "false"
       - name: Print version

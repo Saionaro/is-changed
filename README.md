@@ -8,7 +8,8 @@ Check if the entity has changed and use that knowledge to speed up your workflow
 
 ### Inputs
 
-- `glob`: (required) the entity path to be checked, a glob template. For example: "src", "package-lock.json", "frontend/**/*.js"
+- `glob`: **[required]** the entity path to be checked, a glob template. For example: `"src"`, `"package-lock.json"`, `"frontend/**/*.js"`
+- `token`: **[required]** the GITHUB_TOKEN to grant the action an access to commits history
 
 ### Outputs
 

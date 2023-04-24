@@ -11750,17 +11750,14 @@ async function run() {
     const glob = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("glob");
     const token = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("token");
     const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(token);
-
     const res = await octokit.rest.repos.compareCommitsWithBasehead({
       owner: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner,
       repo: _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.repo,
       basehead: "HEAD~1...HEAD",
     });
-
     const changedFiles = res.data.files ?? [];
     const isChanged = changedFiles
       .some(changedFile=>(0,minimatch__WEBPACK_IMPORTED_MODULE_2__/* .minimatch */ .s7)(changedFile.filename, glob))
-
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("changed", String(isChanged));
   } catch (error) {
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(error.message);

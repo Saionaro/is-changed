@@ -15,11 +15,10 @@ async function run() {
     });
 
     const changedFiles = res.data.files ?? [];
-    console.log(JSON.stringify(changedFiles[0], null, 2))
     const isChanged = changedFiles
       .some(changedFile=>minimatch(changedFile.filename, glob))
 
-    core.setOutput("changed", isChanged);
+    core.setOutput("changed", String(isChanged));
   } catch (error) {
     core.setFailed(error.message);
   }

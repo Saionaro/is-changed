@@ -18,9 +18,9 @@ Check if the entity has changed and use that knowledge to speed up your workflow
 ## Example Workflow
 
 ```yaml
-on: push
-
 name: CI
+
+on: push
 
 jobs:
   build:
@@ -37,7 +37,7 @@ jobs:
       # From now you know if the "frontend" directory changed in the commit
       # You can print it - "true" of "false"
       - name: Print version
-        run: echo ${{ steps.ui_changed.outputs.changed }
+        run: echo ${{ steps.ui_changed.outputs.changed }}
       # Use change state to conditionally run workflow steps
       - name: Test Frontend
         if: ${{ steps.ui_changed.outputs.changed == 'true' }}

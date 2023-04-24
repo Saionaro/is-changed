@@ -15,8 +15,9 @@ async function run() {
     });
 
     const changedFiles = res.data.files ?? [];
+    console.log(JSON.stringify(changedFiles[0], null, 2))
     const isChanged = changedFiles
-      .some(changedPath=>minimatch(changedPath, glob))
+      .some(changedFile=>minimatch(changedFile.filename, glob))
 
     core.setOutput("changed", isChanged);
   } catch (error) {

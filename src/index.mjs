@@ -1,5 +1,5 @@
-import github from "@actions/github";
 import core from "@actions/core";
+import github from "@actions/github";
 import { minimatch } from "minimatch"
 
 async function run() {

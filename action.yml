@@ -16,4 +16,4 @@ outputs:
     description: 'Whether one of input entities changed or not'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'dist/index.mjs'

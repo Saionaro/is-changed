@@ -11758,8 +11758,9 @@ async function run() {
     });
 
     const changedFiles = res.data.files ?? [];
+    console.log(JSON.stringify(changedFiles[0], null, 2))
     const isChanged = changedFiles
-      .some(changedPath=>(0,minimatch__WEBPACK_IMPORTED_MODULE_2__/* .minimatch */ .s7)(changedPath, glob))
+      .some(changedFile=>(0,minimatch__WEBPACK_IMPORTED_MODULE_2__/* .minimatch */ .s7)(changedFile.filename, glob))
 
     _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("changed", isChanged);
   } catch (error) {
